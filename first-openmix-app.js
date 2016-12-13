@@ -22,7 +22,7 @@ function onRequest(request, response) {
         response.respond('aws_ec2_us_east_va', '8.8.4.4'); 
     }
     
-    response.setTTL(1);
+    response.setTTL(20);
     round = (round + 1) % 3;
 }
 
