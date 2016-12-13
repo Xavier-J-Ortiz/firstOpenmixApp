@@ -16,16 +16,18 @@ function onRequest(request, response) {
         response.addARecord('2.2.2.2');
         response.addARecord('3.3.3.3');
         response.addARecord('4.4.4.4');
+        response.setTTL(20);
     }
     
     else if (round === 1) {
-        response.respond('aws_ec2_us_east_va', '8.8.8.8'); 
+        response.respond('aws_ec2_us_east_va', '8.8.8.8');
+        response.setTTL(20);
     }
     
     else if (round === 2) {
-        response.respond('aws_ec2_us_east_va', '8.8.4.4'); 
+        response.respond('aws_ec2_us_east_va', '8.8.4.4');
+        response.setTTL(20);
     }
     
-    response.setTTL(20);
     round = (round + 1) % 3;
 }
