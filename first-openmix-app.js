@@ -11,7 +11,7 @@ var round = 0;
 function onRequest(request, response) {
     // cycles through all servers I want to cycle through.
     if (round === 0){
-        //response.respond('akamai_object_delivery', '4.4.4.4');
+        // response.respond('akamai_object_delivery', '4.4.4.4');
         response.addARecord('1.1.1.1');
         response.addARecord('2.2.2.2');
         response.addARecord('3.3.3.3');
