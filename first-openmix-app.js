@@ -25,4 +25,3 @@ function onRequest(request, response) {
     response.setTTL(20);
     round = (round + 1) % 3;
 }
-
