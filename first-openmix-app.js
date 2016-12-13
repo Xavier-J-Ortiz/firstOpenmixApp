@@ -1,5 +1,6 @@
+//Xavier's first app
 function init(config) {
-    
+    // useless for the time being
     config.requireProvider('akamai_object_delivery');
     config.requireProvider('aws_ec2_us_east_va');
     config.requireProvider('cloudflare_cdn');
@@ -8,7 +9,7 @@ function init(config) {
 var round = 0;
 
 function onRequest(request, response) {
-    
+    // cycles through all servers I want to cycle through.
     if (round == 0){
         response.respond('akamai_object_delivery', '4.4.4.4');       
     }
