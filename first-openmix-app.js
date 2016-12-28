@@ -13,6 +13,7 @@ function onRequest(request, response) {
     // cycles through all servers I want to cycle through.
     'use strict';
     if (round === 0) {
+        response.setProvider('akamai_object_delivery');
         // response.respond('akamai_object_delivery', '4.4.4.4');
         response.addARecord('1.1.1.1');
         response.addARecord('2.2.2.2');
