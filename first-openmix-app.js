@@ -28,6 +28,7 @@ function onRequest(request, response) {
     else if (round === 2) {
         //response.respond('akamai_object_delivery', '8.8.4.4');
         //response.setTTL(20);
+
         response.setProvider('cloudflare_cdn');
         response.addCName('bar.foo.com')
         response.setTTL(25)
