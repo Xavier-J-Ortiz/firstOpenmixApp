@@ -20,13 +20,17 @@ function onRequest(request, response) {
     }
     
     else if (round === 1) {
+        // why is specifying the provider alias important?
         response.respond('aws_ec2_us_east_va', '8.8.8.8');
-        response.setTTL(20);
+        response.setTTL(30);
     }
     
     else if (round === 2) {
-        response.respond('aws_ec2_us_east_va', '8.8.4.4');
-        response.setTTL(20);
+        //response.respond('akamai_object_delivery', '8.8.4.4');
+        //response.setTTL(20);
+        reponse.setProvider('cloudflare_cdn');
+        response.addCName('bar.foo.com')
+        response.setTTL(25)
     }
     
     round = (round + 1) % 3;
